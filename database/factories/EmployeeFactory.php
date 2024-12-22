@@ -22,7 +22,7 @@ class EmployeeFactory extends Factory
             'lastname' => fake()->lastName(),
             'email' => fake()->email(),
             'age' => fake()->numberBetween(25, 50),
-            'position_id' => Position::factory()
+            'position_id' => \App\Models\Position::inRandomOrder()->first()->id
         ];
     }
 }
